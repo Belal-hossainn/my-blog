@@ -1,0 +1,66 @@
+.post-detail {
+  flex: 9;
+}
+.Detail-container {
+  padding: 20px;
+  padding-right: 0;
+}
+
+.coverImg {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.post-title {
+  text-align: center;
+  margin: 15px;
+  font-family: "lora", "serif";
+  font-size: 25px;
+}
+
+.PostEdit {
+  float: right;
+  font-size: 18px;
+  margin-right: 7px;
+}
+
+.editIcon {
+  margin: 5px;
+  cursor: pointer;
+  color: teal;
+}
+.deleteIcon {
+  cursor: pointer;
+  color: tomato;
+}
+
+.post-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-family: "Varela Round", sans-serif;
+  margin-bottom: 5px;
+  margin-top: 30px;
+}
+
+.author {
+  color: rgb(104, 104, 190);
+  font-style: italic;
+}
+
+.updateTime {
+  color: #b39656;
+}
+
+.post-description {
+  font-size: 18px;
+  color: #666;
+  line-height: 20px;
+}
+.post-description::first-letter {
+  margin-left: 20px;
+  font-size: 30px;
+  font-weight: 600;
+}

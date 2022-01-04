@@ -1,12 +1,12 @@
 import TopBar from "./components/topbar/TopBar";
-import Home from "./Pages/Home/Home";
+import Editorial from "./Pages/Editorial/Editorial";
 
 
 function App() {
   return (
     <>
     <TopBar/>
-    <Home/>
+    <Editorial/>
     </>
   );
 }
