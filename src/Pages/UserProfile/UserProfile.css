@@ -1,0 +1,98 @@
+.userContainer {
+  display: flex;
+}
+.userWrapper {
+  flex: 9;
+  padding: 20px;
+}
+
+.profileSetTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.updateProfile {
+  font-size: 25px;
+  margin-bottom: 15px;
+  color: rgb(86, 141, 212);
+}
+
+.deleteProfile {
+  font-size: 15px;
+  cursor: pointer;
+  color: red;
+}
+
+.userForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileImg {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+
+.profileImg > img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.PPIcon {
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  margin-left: 10px;
+  color: white;
+  background-color: lightcoral;
+  cursor: pointer;
+}
+
+.userForm > label {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.PPInput {
+  width: 30%;
+}
+
+.userForm > input {
+  border: none;
+  border-bottom: 1px solid lightgray;
+  margin: 10px 0 10px 0;
+  height: 30px;
+  font-size: 16px;
+}
+
+.userForm > input:focus {
+  outline: none;
+  border-bottom: 2px solid rgb(189, 28, 189);
+  border-radius: 2px;
+  color: rgb(80, 77, 77);
+}
+
+.updateBtn {
+  align-self: center;
+  border: none;
+  border-radius: 10px;
+  width: 150px;
+  padding: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+  color: white;
+  background-color: teal;
+}
+
+.updateBtn:hover {
+  background-color: rgb(1, 114, 114);
+}

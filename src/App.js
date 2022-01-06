@@ -1,12 +1,12 @@
 import TopBar from "./components/topbar/TopBar";
-import Editorial from "./Pages/Editorial/Editorial";
+import Register from "./Pages/Register/Register";
 
 
 function App() {
   return (
     <>
     <TopBar/>
-    <Editorial/>
+    <Register/>
     </>
   );
 }

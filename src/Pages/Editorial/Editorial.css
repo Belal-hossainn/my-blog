@@ -2,6 +2,14 @@
   margin-top: 50px;
 }
 
+.coverImg {
+  width: 70vw;
+  height: 280px;
+  object-fit: cover;
+  margin-left: 150px;
+  border-radius: 5px;
+}
+
 .editorialForm {
   position: relative;
 }
@@ -37,6 +45,7 @@
 
 .writeText {
   font-size: 18px;
+  height: 100vh;
 }
 
 .submit {
@@ -49,5 +58,5 @@
   color: beige;
   font-weight: 600;
   background-color: cornflowerblue;
-  cursor: pointer;
+  cursor: npm;
 }

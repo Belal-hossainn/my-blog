@@ -1,0 +1,72 @@
+.login {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginWrapper {
+  height: 300px;
+  width: 350px;
+  background-color: rgba(75, 175, 189, 0.562);
+  padding: 20px;
+  border-radius: 5px;
+}
+.loginTitle {
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  font-family: "Varela Round", sans-serif;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginForm > label {
+  margin-top: 15px;
+  font-size: 18px;
+  color: white;
+}
+
+.loginForm > input {
+  border: none;
+  height: 30px;
+  font-size: 16px;
+  padding-left: 5px;
+  outline: none;
+  margin-top: 10px;
+  color: gray;
+}
+
+.loginForm > input:focus {
+  color: rgb(139, 136, 136);
+  border: 1px solid rgb(247, 247, 137);
+}
+
+.loginBtn {
+  margin-top: 20px;
+  font-family: "Varela Round", sans-serif;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: rgb(129, 84, 211);
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.registerBtn {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: teal;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
