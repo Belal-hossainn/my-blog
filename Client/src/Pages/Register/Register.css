@@ -7,7 +7,7 @@
 }
 
 .registerWrapper {
-  height: 400px;
+  height: 420px;
   width: 400px;
   background-color: rgba(75, 175, 189, 0.562);
   padding: 20px;
@@ -47,7 +47,7 @@
   border: 1px solid rgb(247, 247, 137);
 }
 
-.registerBtn {
+.regBtn {
   margin-top: 20px;
   font-family: "Varela Round", sans-serif;
   border: none;
@@ -61,7 +61,7 @@
 
 .loginBtn {
   cursor: pointer;
-  padding: 10px;
+  padding: 5px 10px;
   border: none;
   color: rgb(21, 19, 179);
   background-color: transparent;

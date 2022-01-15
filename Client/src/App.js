@@ -1,8 +1,10 @@
+import { useContext } from "react";
 import {
   BrowserRouter as Router,
   Route, Routes
 } from "react-router-dom";
 import TopBar from "./components/topbar/TopBar";
+import { Context } from "./context/Context";
 import Details from "./Pages/Details/Details.jsx";
 import Write from "./Pages/Editorial/Editorial.jsx";
 import Home from "./Pages/Home/Home.jsx";
@@ -13,7 +15,7 @@ import UserProfile from "./Pages/UserProfile//UserProfile";
 
 
 function App() {
-  const currentUser = true;
+  const {user} = useContext(Context);
   return (
     <>
     <TopBar/>
@@ -21,11 +23,11 @@ function App() {
       <Routes>
       <Route exact path="/" element={<Home/>}/>
       <Route exact path="/home" element={<Home/>}/>
-      <Route exact path="/write" element={currentUser ? <Write/> : <Login/>}/>
+      <Route exact path="/write" element={user ? <Write/> : <Login/>}/>
       <Route exact path="/post/:postId" element={<Details/>}/>
-      <Route exact path="/login" element={currentUser ? <Home/> : <Login/>}/>
-      <Route exact path="/register" element={currentUser ? <Home/> : <Register/>}/>
-      <Route exact path="/userProfile" element={currentUser ? <UserProfile/> : <Login/>}/>
+      <Route exact path="/login" element={user ? <Home/> : <Login/>}/>
+      <Route exact path="/register" element={user ? <Home/> : <Register/>}/>
+      <Route exact path="/userProfile" element={user ? <UserProfile/> : <Login/>}/>
       </Routes>
     </Router>
     </>

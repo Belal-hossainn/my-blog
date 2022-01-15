@@ -1,24 +1,23 @@
-import React from 'react'
-import image from '../../Assets/music.jpg'
-import './Post.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import image from '../../Assets/music.jpg';
+import './Post.css';
 
-export default function Post() {
+export default function Post({post}) {
     return (
         <div className='post'>
-            <img className='postImg' src={image} alt="" />
+            {post.photo && (<img className='postImg' src={image} alt="" />)}
             <div className="postInfo">
                 <div className="postCats">
-                    <span className="postCat">Music</span>
-                    <span className="postCat">Life</span>
+                    {post.categories.map((c)=>(<span className="postCat">{c.name}</span>))}
                 </div>
-                <span className="postTitle">How music help in learning</span>
+                <Link to={`/post/${post._id}`} className='link'><span className="postTitle">{post.title}</span></Link>
+                
                 <hr/>
-                <span className="postTime">1 hour ago</span>
+                <span className="postTime">{new Date(post.createdAt).toDateString()}</span>
             </div>
             <div className="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolorum illum, porro perspiciatis laudantium doloremque. Iusto doloremque quos corrupti magnam soluta, unde beatae cumque quibusdam eum suscipit. Beatae, sunt dignissimos?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolorum illum, porro perspiciatis laudantium doloremque. Iusto doloremque quos corrupti magnam soluta, unde beatae cumque quibusdam eum suscipit. Beatae, sunt dignissimos?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia dolorum illum, porro perspiciatis laudantium doloremque. Iusto doloremque quos corrupti magnam soluta, unde beatae cumque quibusdam eum suscipit. Beatae, sunt dignissimos?
+              {post.description}
             </div>
         </div>
     )

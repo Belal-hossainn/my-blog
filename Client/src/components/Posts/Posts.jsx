@@ -2,14 +2,10 @@ import React from 'react'
 import Post from '../Post/Post'
 import './Posts.css'
 
-export default function Posts() {
+export default function Posts({posts}) {
     return (
         <div className='posts-container'>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            
+            {posts.map((p)=><Post post={p}/>)} 
         </div>
     )
 }

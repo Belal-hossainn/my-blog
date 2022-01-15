@@ -1,8 +1,14 @@
 
+import { useContext } from 'react';
+import { Context } from '../../context/Context';
 import './topBar.css';
 
 export default function TopBar() {
-    const user = true;
+    const {user, dispatch} = useContext(Context);
+
+    const handleLogout = ()=>{
+        dispatch({type: "LOGOUT"})
+    }
     return (
         <div className='topBar'>
             <div className="left">
@@ -17,19 +23,17 @@ export default function TopBar() {
                     <li className="topItem"><a className='pageLink' href="/about">ABOUT</a></li>
                     <li className="topItem"><a className='pageLink'  href="/contact">CONTACT</a></li>
                     <li className="topItem"><a className='pageLink' href="/write">WRITE</a></li>
-                    <li className="topItem">{user && "LOGOUT"}</li>
+                    <li className="topItem" onClick={handleLogout}>{user && "LOGOUT"}</li>
                 </ul>
                 
                 
             </div>
             <div className="right">
                 {
-                    user ? <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="" className="topImg" />
+                    user ? ( user.profilePic ? <img src={user.profilePic} alt="" className="topImg" /> : <img src='https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1214428300?k=20&m=1214428300&s=170667a&w=0&h=NPyJe8rXdOnLZDSSCdLvLWOtIeC9HjbWFIx8wg5nIks=' alt="" className="topImg" /> )
                      : <ul className="topBarList">
                     <li className="topItem"><a className='pageLink' href="/login">LOGIN</a></li>
-                    <li className="topItem"><a className='pageLink' href="/register">REGISTER</a></li>
-                    
-                    
+                    <li className="topItem"><a className='pageLink' href="/register">REGISTER</a></li>   
                 </ul>
                 }
                 <i class=" searchIcon fas fa-search"></i>

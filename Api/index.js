@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000;
+const port = 5000;
 
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
@@ -9,6 +9,9 @@ const userRoute = require('./routes/users');
 const postRoute = require('./routes/posts');
 const CategoryRoute = require('./routes/categories');
 const multer = require("multer");
+const cors = require('cors');
+
+app.use(cors());
 
 
 dotenv.config();
@@ -37,7 +40,9 @@ app.use('/api/users', userRoute);
 app.use('/api/posts', postRoute); 
 app.use('/api/categories', CategoryRoute);
 
-
+app.get("/", (req, res)=>{
+  res.send("hello world")
+})
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })

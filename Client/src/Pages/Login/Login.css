@@ -47,7 +47,7 @@
   border: 1px solid rgb(247, 247, 137);
 }
 
-.loginBtn {
+.loginButton {
   margin-top: 20px;
   font-family: "Varela Round", sans-serif;
   border: none;
@@ -59,13 +59,17 @@
   font-size: 20px;
 }
 
+.loginButton:disabled {
+  cursor: not-allowed;
+  background-color: rgb(156, 118, 226);
+}
 .registerBtn {
   position: absolute;
   top: 60px;
-  right: 20px;
+  right: 30px;
   background-color: teal;
   cursor: pointer;
-  padding: 10px;
+  padding: 10px 15px;
   border: none;
   color: white;
   border-radius: 10px;
