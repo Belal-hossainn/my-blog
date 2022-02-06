@@ -46,6 +46,6 @@ app.use('/api/categories', CategoryRoute);
 app.get("/", (req, res)=>{
   res.send("hello world")
 })
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })

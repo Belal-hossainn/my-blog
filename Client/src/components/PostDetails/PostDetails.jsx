@@ -8,7 +8,7 @@ export default function PostDetails() {
     const location = useLocation();
     const path = location.pathname.split('/')[2];
     const [post, setPost] = useState({});
-    const PF = "http://localhost:5000/images/";
+    const PF = "https://myblogsserver.herokuapp.com/images/";
     const {user} = useContext(Context);
     const [title, setTitle] = useState(" ");
     const [description, setDescription] = useState(" ");
@@ -16,7 +16,7 @@ export default function PostDetails() {
 
     useEffect(()=>{
         const getPost = async ()=>{
-            const res = await axios.get("/posts/" + path);
+            const res = await axios.get("https://myblogsserver.herokuapp.com/api/posts/" + path);
             setPost(res.data);
             setTitle(res.data.title);
             setDescription(res.data.description);
@@ -26,7 +26,7 @@ export default function PostDetails() {
 
     const handleDelete = async ()=> {
        try{
-        await axios.delete(`/posts/${post._id}`, {
+        await axios.delete(`https://myblogsserver.herokuapp.com/api/posts/${post._id}`, {
             data: {username: user.username}
         });
         window.location.replace("/");
@@ -37,7 +37,7 @@ export default function PostDetails() {
 
     const handleUpdate = async ()=> {
         try{
-            await axios.put(`/posts/${post._id}`,  {username: user.username,
+            await axios.put(`https://myblogsserver.herokuapp.com/api/posts/${post._id}`,  {username: user.username,
             title, 
             description}
             );

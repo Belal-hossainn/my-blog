@@ -5,7 +5,7 @@ import './Post.css';
 export default function Post({post}) {
     console.log(post)
 
-   const PF = "http://localhost:5000/images/"
+   const PF = "https://myblogsserver.herokuapp.com/images/"
     return (
         <div className='post'>
             {post.photo && (<img className='postImg' src={PF + post.photo} alt="" />)}

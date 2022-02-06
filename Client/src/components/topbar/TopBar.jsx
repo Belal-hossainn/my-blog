@@ -6,7 +6,7 @@ import './topBar.css';
 export default function TopBar() {
     const [click, setClick] = useState(false);
     const {user, dispatch} = useContext(Context);
-    const PF = "http://localhost:5000/images/";
+    const PF = "https://myblogsserver.herokuapp.com/images/";
 
     const handleClick = () => setClick(!click);
 

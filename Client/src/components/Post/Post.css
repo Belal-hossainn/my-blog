@@ -91,42 +91,30 @@
 @media screen and (min-width: 481px) {
   .post {
     width: 500px;
-    margin: auto;
-    margin-bottom: 40px;
   }
 }
 @media screen and (min-width: 769px) {
   .post {
     width: 550px;
-    margin: auto;
-    margin-bottom: 40px;
   }
 }
 @media screen and (min-width: 992px) {
   .post {
     width: 650px;
-    margin: auto;
-    margin-bottom: 40px;
   }
 }
 @media screen and (min-width: 993px) {
   .post {
     width: 650px;
-    margin: auto;
-    margin-bottom: 40px;
   }
 }
 @media screen and (min-width: 1201px) {
   .post {
     width: 390px;
-    margin: auto;
-    margin-bottom: 40px;
   }
 }
 @media screen and (min-width: 1301px) {
   .post {
     width: 450px;
-    margin: auto;
-    margin-bottom: 40px;
   }
 }
