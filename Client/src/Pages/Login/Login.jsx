@@ -27,7 +27,7 @@ export default function Login() {
     return (
         <div className='login'>
            <div className="loginWrapper">
-           <h1 className="loginTitle">Login</h1>
+           <h1 className="loginTitle">LOGIN</h1>
             <form className="loginForm" onSubmit={handleSubmit}>
                 <label>Username</label>
                 <input type="text" name="username" placeholder='type your username...' ref={userRef} />
@@ -35,8 +35,10 @@ export default function Login() {
                 <input type="password" name="password" ref={passRef} />
                 <button type="submit" className="loginButton" disabled={isFetching}>Login</button>
             </form>
+            <span>Don't have a account? </span>
+            <button className="registerBtn"><Link to= "/register" >Register</Link></button>
            </div>
-           <button className="registerBtn"><Link to= "/register" className='link'>Register</Link></button>
+           
         </div>
     )
 }

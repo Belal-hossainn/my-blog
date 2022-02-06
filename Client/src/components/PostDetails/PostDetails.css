@@ -6,11 +6,15 @@
   padding-right: 0;
 }
 
-.coverImg {
+/* .Detail-container img {
+  width: 90%;
+} */
+.cover-image {
   width: 100%;
   height: 350px;
   object-fit: cover;
   border-radius: 5px;
+  margin-left: 0px;
 }
 
 .post-title {
@@ -20,6 +24,16 @@
   font-size: 25px;
 }
 
+.post-title-input {
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: "lora", "serif";
+  font-size: 25px;
+  width: 80%;
+}
+.post-title-input:focus {
+  outline: none;
+}
 .PostEdit {
   float: right;
   font-size: 18px;
@@ -58,8 +72,27 @@
   color: #666;
   line-height: 20px;
 }
+.post-desc-input {
+  font-size: 18px;
+  color: #666;
+  line-height: 20px;
+  width: 80%;
+}
+
 .post-description::first-letter {
   margin-left: 20px;
   font-size: 30px;
   font-weight: 600;
+}
+
+.post-update-btn {
+  border: none;
+  background-color: teal;
+  border-radius: 5px;
+  width: 100px;
+  color: white;
+  padding: 5px;
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
 }

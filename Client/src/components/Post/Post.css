@@ -1,12 +1,11 @@
 .post {
-  width: 385px;
+  width: 390px;
   margin: 0px 25px 40px 25px;
 }
 .postImg {
   width: 100%;
-  height: 280px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 5px;
 }
 
 .postInfo {
@@ -16,7 +15,7 @@
 }
 
 .postCat {
-  font-family: "Varela Round", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 12px;
   color: #be9656;
   line-height: 40px;
@@ -33,8 +32,26 @@
   font-weight: 700;
   margin-top: 10px;
   cursor: pointer;
+  text-align: center;
 }
 
+.postSub {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 5px;
+}
+.author {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(44, 18, 18);
+  margin-top: 10px;
+  padding-left: 2px;
+  text-transform: uppercase;
+}
 .postTime {
   font-family: "Lora", serif;
   font-style: italic;
@@ -46,12 +63,70 @@
 .description {
   font-family: "Varela Round", sans-serif;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 22px;
   color: #444;
   margin-top: 15px;
+  padding: 0px 5px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.more-btn {
+  margin: 10px;
+  margin-bottom: 20px;
+  font-family: "Lora", serif;
+  font-weight: 600;
+  cursor: pointer;
+  color: rgb(24, 15, 15);
+  font-size: 16px;
+}
+
+.more-btn:hover {
+  color: blueviolet;
+}
+
+@media screen and (min-width: 481px) {
+  .post {
+    width: 500px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .post {
+    width: 550px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .post {
+    width: 650px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 993px) {
+  .post {
+    width: 650px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .post {
+    width: 390px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 1301px) {
+  .post {
+    width: 450px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
 }

@@ -25,7 +25,7 @@ export default function Register() {
     return (
         <div className='register'>
            <div className="registerWrapper">
-           <h1 className="registerTitle">Register</h1>
+           <h1 className="registerTitle">REGISTER</h1>
             <form className="registerForm" onSubmit={handleSubmit}>
             <label>Username</label>
                 <input type="text" name="name" placeholder='Enter your name...' id="" onChange={e=> setUsername(e.target.value)}/>
@@ -37,7 +37,7 @@ export default function Register() {
                 {error &&  <span style={{color: 'red', marginTop: '10px', marginBottom: '0 px'}}> Something went wrong...</span>}
             </form>
             <span>Already have an account?</span>
-            <button className="loginBtn"><Link to="/login" className='link'>login</Link></button>
+            <button className="loginBtn"><Link to="/login" >login</Link></button>
            </div>
            
         </div>

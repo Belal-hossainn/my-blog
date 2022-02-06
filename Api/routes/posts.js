@@ -6,11 +6,11 @@ const Post = require("../models/Post");
 //CREATE POST
 router.post("/", async (req, res)=> {
     const newPost = new Post(req.body);
-    try{
-        const savedPost = await newPost.save();
-        res.status(200).json(savedPost);
-    }catch (err) {
-        res.status(500).json(err);
+    try {
+      const savedPost = await newPost.save();
+      res.status(200).json(savedPost);
+    } catch (err) {
+      res.status(500).json(err);
     }
 } );
 
@@ -64,10 +64,11 @@ router.get("/:id", async (req, res)=> {
     }
 });
 
+
 //GET ALL POSTS
 router.get("/", async (req, res)=>{
     const username = req.query.user;
-    const catName = req.body.cat;
+    const catName = req.query.cat;
     try{
         let posts;
         if(username){

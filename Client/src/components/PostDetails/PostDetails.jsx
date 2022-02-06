@@ -1,40 +1,82 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Context } from '../../context/Context';
 import './PostDetails.css';
 
 export default function PostDetails() {
     const location = useLocation();
     const path = location.pathname.split('/')[2];
     const [post, setPost] = useState({});
+    const PF = "http://localhost:5000/images/";
+    const {user} = useContext(Context);
+    const [title, setTitle] = useState(" ");
+    const [description, setDescription] = useState(" ");
+    const [updateMode, setUpdateMode] = useState(false)
 
     useEffect(()=>{
         const getPost = async ()=>{
             const res = await axios.get("/posts/" + path);
-            setPost(res.data)
+            setPost(res.data);
+            setTitle(res.data.title);
+            setDescription(res.data.description);
         };
         getPost();
-    }, [path])
+    }, [path]);
+
+    const handleDelete = async ()=> {
+       try{
+        await axios.delete(`/posts/${post._id}`, {
+            data: {username: user.username}
+        });
+        window.location.replace("/");
+       } catch (err) {
+           console.log(err)
+       }
+    };
+
+    const handleUpdate = async ()=> {
+        try{
+            await axios.put(`/posts/${post._id}`,  {username: user.username,
+            title, 
+            description}
+            );
+            setUpdateMode(false);
+           } catch (err) {
+               console.log(err)
+           }
+    }
 
     return (
         <div className='post-detail'>
            <div className="Detail-container">
                {post.photo &&
-               <img src={post.photo} alt="" className="coverImg" />}
-               <div className="PostEdit">
-                   <i className="editIcon far fa-edit"></i>
-                   <i className="deleteIcon far fa-trash-alt"></i>
-               </div>
-               <h1 className="post-title"> {post.title}</h1>
+               <img src={PF + post.photo} alt="" className="cover-image" />}
+               {
+                   post.username === user?.username && (
+                    <div className="PostEdit">
+                    <i className="editIcon far fa-edit" onClick={()=> setUpdateMode(true)}></i>
+                    <i className="deleteIcon far fa-trash-alt" onClick={handleDelete}></i>
+                </div>
+                   )
+               }
+              {
+                  updateMode ? <input type="text" value={title} className='post-title-input' autoFocus onChange={(e)=> setTitle(e.target.value)}/> :  <h1 className="post-title"> {title}</h1>
+              }
                
-            <div className="post-info">
+            {
+                !updateMode && <div className="post-info">
                 <Link to={`/?user=${post.username}`} className='link'> 
                 <span className="author"><b>{post.username}</b></span>
                 </Link>
                
                 <span className="updateTime"> {new Date(post.createdAt).toDateString()}</span>
             </div>
-            <p className="post-description">{post.description}</p>
+            }
+            {
+                updateMode ? <textarea rows="8"  className='post-desc-input' value={description} onChange={(e)=> setDescription(e.target.value)}/> : <p className="post-description">{description}</p>
+            }
+            {updateMode && <button className="post-update-btn" onClick={handleUpdate}>update</button>}
            </div>
         </div>
     )

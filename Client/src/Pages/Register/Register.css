@@ -9,16 +9,18 @@
 .registerWrapper {
   height: 420px;
   width: 400px;
-  background-color: rgba(75, 175, 189, 0.562);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   padding: 20px;
   border-radius: 5px;
 }
 .registerTitle {
   font-size: 30px;
   text-align: center;
-  color: white;
+  color: rgb(27, 20, 20);
   margin-bottom: 20px;
   font-family: "Varela Round", sans-serif;
+  border-bottom: 2px solid blue;
+  border-radius: 2px;
 }
 
 .registerForm {
@@ -29,11 +31,11 @@
 .registerForm > label {
   margin-top: 15px;
   font-size: 18px;
-  color: white;
+  color: rgb(77, 72, 72);
 }
 
 .registerForm > input {
-  border: none;
+  border: 1px solid gray;
   height: 30px;
   font-size: 16px;
   padding-left: 5px;
@@ -44,7 +46,8 @@
 
 .registerForm > input:focus {
   color: rgb(139, 136, 136);
-  border: 1px solid rgb(247, 247, 137);
+  border: 2px solid rgb(48, 45, 214);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .regBtn {
@@ -67,4 +70,5 @@
   background-color: transparent;
   font-size: 20px;
   font-family: "Varela", sans-serif;
+  font-style: italic;
 }

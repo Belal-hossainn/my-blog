@@ -1,6 +1,3 @@
-.header {
-  margin-top: 50px;
-}
 .header-title {
   display: flex;
   flex-direction: column;
@@ -10,19 +7,28 @@
 }
 .header-title-sm {
   position: absolute;
-  top: 18%;
+  top: 25%;
   font-size: 20px;
 }
 .header-title-lg {
   position: absolute;
-  top: 20%;
-  font-size: 80px;
+  top: 27%;
+  font-size: clamp(2rem, 5vw, 10rem);
 }
 
 .header-img {
   width: 100%;
-  height: 450px;
+  height: 300px;
   object-fit: cover;
-  object-position: center;
-  margin-top: 80px;
+  object-position: cover;
+  margin-top: 5px;
+}
+
+@media screen and (min-width: 1024px) {
+  .header-title-sm {
+    top: 20%;
+  }
+  .header-title-lg {
+    top: 22%;
+  }
 }
